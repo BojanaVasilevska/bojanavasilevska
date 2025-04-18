@@ -70,9 +70,10 @@
 ### 📫 Let's Connect!
 
 <p align="center">
-  <a href="mailto:bojanavasilevska@gmail.com">📧 bojanavasilevska@gmail.com</a> · 
-  <a href="https://linkedin.com/in/bojana-vasilevska-8a100b86">🔗 LinkedIn</a>
+  <a href="mailto:bojanavasilevska@gmail.com"><img src="https://img.shields.io/badge/Email-%23EA4335.svg?&style=for-the-badge&logo=gmail&logoColor=white" /></a>
+  <a href="https://linkedin.com/in/bojana-vasilevska-8a100b86" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 </p>
+
 
 ---
 
