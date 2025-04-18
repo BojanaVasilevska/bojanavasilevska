@@ -1,11 +1,11 @@
-<!-- Banner -->
+<!-- Header Banner -->
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/212750155-3ceddfbd-19d3-40a3-87af-8d329c8323c4.gif" width="100%" alt="Header">
+  <img src="https://user-images.githubusercontent.com/74038190/212750155-3ceddfbd-19d3-40a3-87af-8d329c8323c4.gif" width="100%" alt="Animated Banner">
 </p>
 
 <!-- Intro -->
-<h1 align="center">Hi there, I'm Bojana 👋</h1>
-<h3 align="center">Passionate Full Stack Developer | Lifelong Learner | Tech Enthusiast</h3>
+<h1 align="center">👋 Hey, I'm Bojana</h1>
+<h3 align="center">💻 Full Stack Developer | 🔁 Lifelong Learner | ⚡ Tech Explorer</h3>
 
 <p align="center">
   <a href="mailto:bojanavasilevska@gmail.com"><img src="https://img.shields.io/badge/Email-%23EA4335.svg?&style=for-the-badge&logo=gmail&logoColor=white" /></a>
@@ -14,22 +14,20 @@
 
 ---
 
-<!-- About Me -->
-### 💡 About Me
+### 🌟 About Me
 
-- 🌍 Based in Europe | Building the future one line of code at a time  
-- 🧠 I love solving real-world problems with creative code  
-- 🔭 Currently working on: **Fkask and Next.js app**  
-- ⚙️ Languages I enjoy: **Python, Go, TypeScript, JavaScript**  
-- 🌱 Constantly exploring: **AI features, backend scalability, and UI/UX best practices**  
-- 🛠 Open to side-projects, collaborations, and freelance  
+- 🌍 European dev crafting global solutions  
+- 🎯 Currently building: **Flask + Next.js App**  
+- 💬 Coding languages I vibe with: **Python, Go, TypeScript, JavaScript**  
+- 🔎 Exploring: **AI integrations, backend scalability, and UI/UX magic**  
+- 🤝 Open to: side-projects, collabs, freelance missions  
+- ✨ Motto: *"Turn coffee into scalable code."*
 
 ---
 
-<!-- Tech Stack -->
-### 🧰 Tech Toolbox
+### 🛠️ Tech Stack
 
-<p align="left">
+<p align="center">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5" width="40" />
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS3" width="40" />
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" />
@@ -49,26 +47,33 @@
 
 ---
 
-<!-- GitHub Stats -->
-### 📊 GitHub Stats
+### 📈 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=bojanavasilevska&show_icons=true&theme=radical" width="48%" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=bojanavasilevska&theme=radical" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api?username=bojanavasilevska&show_icons=true&theme=tokyonight&hide_border=true&custom_title=My%20GitHub%20Stats" width="48%" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=bojanavasilevska&theme=tokyonight&hide_border=true" width="48%" />
 </p>
 
 ---
 
-<!-- Fun Section -->
-### 🎯 Fun Facts
+### ✨ Fun Facts
 
-- ☕ Coffee + Code = Happiness  
-- 🧩 I love logic puzzles and escape rooms  
-- 🧘‍♀️ When not coding, I’m likely doing yoga or planning my next trip  
+- ☕ Coffee makes my code 10x better  
+- 🔐 Secret skill: Escape room speedrunner  
+- 🧘‍♀️ I balance bugs with yoga poses  
+- 🌍 Fluent in tech & travel  
 
 ---
 
-<!-- Footer -->
+### 📫 Let's Connect!
+
+<p align="center">
+  <a href="mailto:bojanavasilevska@gmail.com">📧 bojanavasilevska@gmail.com</a> · 
+  <a href="https://linkedin.com/in/bojana-vasilevska-8a100b86">🔗 LinkedIn</a>
+</p>
+
+---
+
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=bojanavasilevska&label=Profile+Views&color=blue&style=flat" alt="profile views"/>
 </p>
