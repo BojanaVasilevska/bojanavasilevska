@@ -1,6 +1,6 @@
 <!-- Banner -->
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/95478989/198955082-6e78ebb5-e1e4-49f9-8d32-6e5af3984dcd.gif" width="100%" alt="Header">
+  <img src="https://user-images.githubusercontent.com/74038190/212750155-3ceddfbd-19d3-40a3-87af-8d329c8323c4.gif" width="100%" alt="Header">
 </p>
 
 <!-- Intro -->
