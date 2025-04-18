@@ -19,7 +19,7 @@
 - 🌍 European dev crafting global solutions  
 - 🎯 Currently building: **Flask + Next.js App**  
 - 💬 Coding languages I vibe with: **Python, Go, TypeScript, JavaScript**  
-- 🔎 Exploring: **AI integrations, backend scalability, and UI/UX magic**  
+- 🔎 Exploring: **Backend scalability, and UI/UX magic**  
 - 🤝 Open to: side-projects, collabs, freelance missions  
 - ✨ Motto: *"Turn coffee into scalable code."*
 
@@ -45,13 +45,15 @@
   <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma" width="40" />
 </p>
 
----
-
 ### 📈 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=bojanavasilevska&show_icons=true&theme=tokyonight&hide_border=true&custom_title=My%20GitHub%20Stats" width="48%" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=bojanavasilevska&theme=tokyonight&hide_border=true" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bojanavasilevska&layout=compact&langs_count=8&theme=tokyonight&hide_border=true" width="46%" />
+  <img src="https://github-readme-stats.vercel.app/api?username=bojanavasilevska&show_icons=true&theme=tokyonight&hide_border=true&hide_rank=true&custom_title=My%20GitHub%20Stats" width="45%" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=bojanavasilevska&theme=tokyonight&hide_border=true" width="91%"/>
 </p>
 
 ---
@@ -77,3 +79,5 @@
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=bojanavasilevska&label=Profile+Views&color=blue&style=flat" alt="profile views"/>
 </p>
+
+
