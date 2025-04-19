@@ -25,18 +25,18 @@
 <div style="background: rgba(155, 89, 182, 0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
 
 <p align="center">
-  <img align="right" src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="320">
+  <img align="right" src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="380">
 
-🌍 **European dev** crafting global solutions  
-🎯 **Currently building:** Flask + Next.js App  
-💬 **Coding languages I vibe with:**  
+- 🌍 **European dev** crafting global solutions  
+- 🎯 **Currently building:** Flask + Next.js App  
+- 💬 **Coding languages I vibe with:**  
 `Python` `Go` `TypeScript` `JavaScript`  
-🔎 **Exploring:** Backend scalability, and UI/UX magic  
-🤝 **Open to:** side-projects, collabs, freelance missions  
-✨ *"Turn coffee into scalable code."*  
+- 🔎 **Exploring:** Backend scalability, and UI/UX magic  
+- 🤝 **Open to:** side-projects, collabs, freelance missions  
+- ✨ *"Turn coffee into scalable code."*  
 </p>
 
-
+<br/>
 
 ## 🛠️ Tech Stack
 
