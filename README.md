@@ -66,7 +66,6 @@
 <div style="background: rgba(155, 89, 182, 0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
 
 - ☕ Coffee makes my code 10x better  
-- 🔐 Secret skill: Escape room speedrunner  
 - 🧘‍♀️ I balance bugs with yoga poses  
 - 🌍 Fluent in tech & travel  
 
