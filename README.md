@@ -49,7 +49,13 @@
 ## 📈 GitHub Stats
 
 <div style="background: rgba(155, 89, 182, 0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
+  
+  <!-- Centered Snake Animation -->
+  <div align="center">
+    <img src="https://github.com/bojanavasilevska/bojanavasilevska/blob/output/github-snake.svg" alt="snake gif" width="100%" />
+  </div>
 
+  
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bojanavasilevska&layout=compact&langs_count=8&theme=tokyonight&hide_border=true" width="46%" />
   <img src="https://github-readme-stats.vercel.app/api?username=bojanavasilevska&show_icons=true&theme=tokyonight&hide_border=true&hide_rank=true&custom_title=My%20GitHub%20Stats" width="45%" />
@@ -68,8 +74,6 @@
 - ☕ Coffee makes my code 10x better  
 - 🧘‍♀️ I balance bugs with yoga poses  
 - 🌍 Fluent in tech & travel  
-
-
 
 ## 📫 Let's Connect!
 
