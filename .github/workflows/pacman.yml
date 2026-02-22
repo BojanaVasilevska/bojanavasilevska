@@ -1,4 +1,4 @@
-name: Generate pacman animation
+name: Generate Animations
 
 on:
   schedule:
@@ -10,62 +10,70 @@ on:
 
 jobs:
   generate:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
     permissions:
       contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.SNAKE_ACCESS_TOKEN }}
-          fetch-depth: 0  # Fetch all history for all branches
-
-      - name: generate pacman-contribution-graph.svg
+          
+      # Generate PACMAN animation
+      - name: Generate Pacman animation
         uses: abozanona/pacman-contribution-graph@main
         with:
           github_user_name: bojanavasilevska
-
-      - name: Setup Git config
+          
+      # Generate SNAKE animation
+      - name: Generate Snake animation
+        uses: Platane/snk@v3
+        with:
+          github_user_name: bojanavasilevska
+          outputs: |
+            dist/snake.svg?palette=github-light
+            dist/snake-dark.svg?palette=github-dark
+          
+      # Create combined directory structure
+      - name: Prepare files for output branch
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-
-      - name: Update output branch
-        run: |
-          # Try to checkout output branch, create if it doesn't exist
-          if git show-ref --verify --quiet refs/heads/output; then
-            git checkout output
-          elif git ls-remote --heads origin output | grep output; then
-            git fetch origin output
-            git checkout -b output origin/output
-          else
-            git checkout --orphan output
-            git rm -rf .
-            git commit --allow-empty -m "Initialize output branch"
-            git push -u origin output
-            git checkout output
-          fi
+          mkdir -p output/pacman output/snake
           
-          # Create dist directory if it doesn't exist
-          mkdir -p dist
+          # Copy Pacman files
+          cp dist/pacman-contribution-graph.svg output/pacman/ 2>/dev/null || true
+          cp dist/pacman-contribution-graph-dark.svg output/pacman/ 2>/dev/null || true
           
-          # Copy the SVG files from the main branch's workspace
-          # The generated files are in the workspace root's dist folder
-          if [ -f "${{ github.workspace }}/dist/pacman-contribution-graph.svg" ]; then
-            cp ${{ github.workspace }}/dist/*.svg dist/
-          elif [ -f "../dist/pacman-contribution-graph.svg" ]; then
-            cp ../dist/*.svg dist/
-          fi
+          # Copy Snake files
+          cp dist/snake.svg output/snake/ 2>/dev/null || true
+          cp dist/snake-dark.svg output/snake/ 2>/dev/null || true
           
-          # Add and commit changes
-          git add dist/
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Update pacman animation - $(date +'%Y-%m-%d %H:%M:%S')"
-            git push origin output
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.SNAKE_ACCESS_TOKEN }}
+          # Also keep copies in root dist for backward compatibility
+          mkdir -p dist-final
+          cp output/pacman/* dist-final/ 2>/dev/null || true
+          cp output/snake/* dist-final/ 2>/dev/null || true
+          
+      # Deploy to output branch
+      - name: Deploy to output branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.SNAKE_ACCESS_TOKEN }}
+          publish_branch: output
+          publish_dir: ./output
+          keep_files: true
+          user_name: 'github-actions'
+          user_email: 'github-actions@github.com'
+          commit_message: 'Update animations - ${{ github.event.head_commit.message }}'
+          
+      # Also deploy root files if needed
+      - name: Deploy root files to output branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.SNAKE_ACCESS_TOKEN }}
+          publish_branch: output
+          publish_dir: ./dist-final
+          destination_dir: ./root
+          keep_files: true
+          user_name: 'github-actions'
+          user_email: 'github-actions@github.com'
