@@ -1,14 +1,9 @@
-name: GitHub Snake Game
+name: Generate Snake and Pacman Animations
 
 on:
-  # Schedule the workflow to run daily at midnight UTC
   schedule:
-    - cron: '0 0 * * *' # Fixed: Quotes around cron string
-
-  # Allow manual triggering
+    - cron: '0 0 * * *'
   workflow_dispatch:
-
-  # Trigger on pushes to the main branch
   push:
     branches:
       - main
@@ -17,39 +12,49 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-
-    # 1. ✅ ADDED: Explicit permissions for the job
     permissions:
       contents: write
 
     steps:
-      # Step 1: Checkout the repository (Upgraded to v4)
+      # Step 1: Checkout repository
       - name: Checkout Repository
-        uses: actions/checkout@v4 # Changed: Upgraded from v3
+        uses: actions/checkout@v4
 
-      # Step 2: Generate the snake animations
+      # Step 2: Generate Snake Animations
       - name: Generate GitHub Contributions Snake Animations
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
-            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+            dist/snake/github-snake.svg
+            dist/snake/github-snake-dark.svg?palette=github-dark
+            dist/snake/github-snake.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
-      # ✅ NEW: Step to handle potential empty output
+      # Step 3: Generate Pacman Animation
+      - name: Generate Pacman Contribution Animation
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/pacman/pacman.svg?palette=github-light&animation=pacman
+            dist/pacman/pacman-dark.svg?palette=github-dark&animation=pacman
+            dist/pacman/pacman.gif?palette=github-dark&animation=pacman
+
+      # Step 4: Check for generated files
       - name: Check for generated files
         id: check_files
         run: |
-          if [ -f "dist/github-snake.svg" ]; then
+          if [ -d "dist" ] && [ "$(ls -A dist)" ]; then
             echo "Files generated successfully"
             echo "files_exist=true" >> $GITHUB_OUTPUT
+            echo "Generated files:"
+            find dist -type f -name "*.svg" -o -name "*.gif" | head -10
           else
-            echo "Warning: No snake files were generated. This may happen if you have no public contributions."
+            echo "Warning: No animation files were generated. This may happen if you have no public contributions."
             echo "files_exist=false" >> $GITHUB_OUTPUT
           fi
 
-      # Step 3: Deploy the generated files (conditional)
+      # Step 5: Deploy all generated files
       - name: Deploy to Output Branch
         if: steps.check_files.outputs.files_exist == 'true'
         uses: peaceiris/actions-gh-pages@v3
@@ -57,7 +62,7 @@ jobs:
           github_token: ${{ secrets.SNAKE_ACCESS_TOKEN }}
           publish_dir: ./dist
           publish_branch: output
-          commit_message: "Update snake animation [skip ci]"
-          # ✅ Optional: Add user info for cleaner git history
+          commit_message: "Update snake and pacman animations [skip ci]"
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
+          keep_files: true
