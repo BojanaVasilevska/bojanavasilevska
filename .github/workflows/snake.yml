@@ -37,12 +37,12 @@ jobs:
           github_user_name: ${{ github.repository_owner }}
           dark_mode: true
           
-      # Step 4: Install FFmpeg and create Pacman GIF
-      - name: Install FFmpeg and Create Pacman GIF
+      # Step 4: Install ImageMagick and create Pacman GIF
+      - name: Install ImageMagick and Create Pacman GIF
         run: |
-          # Install FFmpeg
+          # Install ImageMagick
           sudo apt-get update
-          sudo apt-get install -y ffmpeg
+          sudo apt-get install -y imagemagick
           
           # Create pacman directory
           mkdir -p dist/pacman
@@ -52,9 +52,11 @@ jobs:
             echo "✅ Found Pacman light SVG"
             cp dist/pacman-contribution-graph.svg dist/pacman/pacman.svg
             
-            # Convert SVG to GIF using FFmpeg
-            ffmpeg -i dist/pacman-contribution-graph.svg -vf "fps=10,scale=800:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 dist/pacman/pacman.gif
+            # Convert SVG to GIF using ImageMagick
+            convert -background none -delay 20 -loop 0 -resize 800x dist/pacman-contribution-graph.svg dist/pacman/pacman.gif
             echo "✅ Created Pacman GIF from light SVG"
+          else
+            echo "⚠️ Pacman light SVG not found"
           fi
           
           if [ -f "dist/pacman-contribution-graph-dark.svg" ]; then
@@ -62,11 +64,16 @@ jobs:
             cp dist/pacman-contribution-graph-dark.svg dist/pacman/pacman-dark.svg
             
             # Convert dark SVG to GIF
-            ffmpeg -i dist/pacman-contribution-graph-dark.svg -vf "fps=10,scale=800:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 dist/pacman/pacman-dark.gif
+            convert -background none -delay 20 -loop 0 -resize 800x dist/pacman-contribution-graph-dark.svg dist/pacman/pacman-dark.gif
             echo "✅ Created Pacman dark GIF"
+          else
+            echo "⚠️ Pacman dark SVG not found"
           fi
           
-          echo "Files in dist/pacman:"
+          # Also copy original SVGs to pacman folder for backup
+          cp dist/pacman-contribution-graph*.svg dist/pacman/ 2>/dev/null || true
+          
+          echo "📁 Files in dist/pacman:"
           ls -la dist/pacman/
 
       # Step 5: Check for generated files
@@ -76,7 +83,7 @@ jobs:
           if [ -d "dist" ] && [ "$(ls -A dist)" ]; then
             echo "✅ Files generated successfully"
             echo "files_exist=true" >> $GITHUB_OUTPUT
-            echo "Generated files:"
+            echo "📊 Generated files:"
             find dist -type f -name "*.svg" -o -name "*.gif" | head -20
           else
             echo "⚠️ Warning: No animation files were generated."
