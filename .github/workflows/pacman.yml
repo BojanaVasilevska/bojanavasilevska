@@ -16,28 +16,68 @@ jobs:
     timeout-minutes: 5
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.SNAKE_ACCESS_TOKEN }}
+          
       - name: generate pacman-contribution-graph.svg
         uses: abozanona/pacman-contribution-graph@main
         with:
           github_user_name: bojanavasilevska
           
-      - name: Create output branch and push files
+      - name: Setup Git config
         run: |
-          # Create a temporary directory
-          mkdir temp-output
-          cp dist/* temp-output/
-          
-          # Go to temp directory
-          cd temp-output
-          
-          # Initialize git
-          git init
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           
-          # Add files
-          git add .
-          git commit -m "Update pacman animation - $(date +'%Y-%m-%d %H:%M:%S')"
+      - name: Switch to or create output branch
+        run: |
+          # Check if output branch exists remotely
+          if git ls-remote --heads origin output | grep output; then
+            echo "Output branch exists, checking it out"
+            git fetch origin output
+            git checkout -b output origin/output || git checkout output
+          else
+            echo "Creating new output branch"
+            git checkout --orphan output
+            git rm -rf .
+            git commit --allow-empty -m "Initial output branch"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.SNAKE_ACCESS_TOKEN }}
           
-          # Force push to output branch (this will overwrite everything)
-          git push --force https://x-access-token:${{ secrets.SNAKE_ACCESS_TOKEN }}@github.com/bojanavasilevska/bojanavasilevska.git HEAD:output
+      - name: Copy generated files
+        run: |
+          # Make sure we're on output branch
+          git checkout output
+          
+          # Create dist directory if it doesn't exist
+          mkdir -p dist
+          
+          # Copy files from the main branch's generated files
+          # (they're in the workspace root's dist folder)
+          if [ -f "../dist/pacman-contribution-graph.svg" ]; then
+            cp ../dist/*.svg dist/ 2>/dev/null || true
+          fi
+          
+          # If files don't exist in parent, check current directory
+          if [ ! "$(ls -A dist)" ]; then
+            cp dist/*.svg dist/ 2>/dev/null || echo "No files to copy"
+          fi
+          
+      - name: Commit and push changes
+        run: |
+          git checkout output
+          
+          # Check if there are changes to commit
+          if git status --porcelain | grep .; then
+            git add dist/
+            git commit -m "Update pacman animation - $(date +'%Y-%m-%d %H:%M:%S')"
+            git push origin output
+            echo "Changes pushed successfully"
+          else
+            echo "No changes to commit"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.SNAKE_ACCESS_TOKEN }}
