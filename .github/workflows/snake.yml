@@ -20,7 +20,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Step 2: Generate Snake Animations
+      # Step 2: Generate Snake Animations (using Platane/snk)
       - name: Generate GitHub Contributions Snake Animations
         uses: Platane/snk@v3
         with:
@@ -30,31 +30,52 @@ jobs:
             dist/snake/github-snake-dark.svg?palette=github-dark
             dist/snake/github-snake.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
-      # Step 3: Generate Pacman Animation
+      # Step 3: Generate Pacman Animation (using abozanona/pacman-contribution-graph)
       - name: Generate Pacman Contribution Animation
-        uses: Platane/snk@v3
+        uses: abozanona/pacman-contribution-graph@main
         with:
           github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/pacman/pacman.svg?palette=github-light&animation=pacman
-            dist/pacman/pacman-dark.svg?palette=github-dark&animation=pacman
-            dist/pacman/pacman.gif?palette=github-dark&animation=pacman
+          # Optional: Add dark mode support
+          dark_mode: true
+          
+      # Step 4: Rename and organize Pacman files to match your structure
+      - name: Organize Pacman files
+        run: |
+          # Create pacman directory
+          mkdir -p dist/pacman
+          
+          # Check if pacman files were generated (they're usually in the root dist folder)
+          if [ -f "dist/pacman-contribution-graph.svg" ]; then
+            cp dist/pacman-contribution-graph.svg dist/pacman/pacman.svg
+            echo "✅ Pacman light SVG copied"
+          fi
+          
+          if [ -f "dist/pacman-contribution-graph-dark.svg" ]; then
+            cp dist/pacman-contribution-graph-dark.svg dist/pacman/pacman-dark.svg
+            echo "✅ Pacman dark SVG copied"
+          fi
+          
+          # Note: The pacman action doesn't generate GIFs by default
+          # If you want a GIF, you'd need to convert it separately
+          
+          echo "Files in dist/pacman:"
+          ls -la dist/pacman/ 2>/dev/null || echo "No pacman files found"
 
-      # Step 4: Check for generated files
+      # Step 5: Check for generated files
       - name: Check for generated files
         id: check_files
         run: |
           if [ -d "dist" ] && [ "$(ls -A dist)" ]; then
-            echo "Files generated successfully"
+            echo "✅ Files generated successfully"
             echo "files_exist=true" >> $GITHUB_OUTPUT
             echo "Generated files:"
-            find dist -type f -name "*.svg" -o -name "*.gif" | head -10
+            find dist -type f -name "*.svg" -o -name "*.gif" | head -20
           else
-            echo "Warning: No animation files were generated. This may happen if you have no public contributions."
+            echo "⚠️ Warning: No animation files were generated."
             echo "files_exist=false" >> $GITHUB_OUTPUT
           fi
 
-      # Step 5: Deploy all generated files
+      # Step 6: Deploy all generated files
       - name: Deploy to Output Branch
         if: steps.check_files.outputs.files_exist == 'true'
         uses: peaceiris/actions-gh-pages@v3
