@@ -20,7 +20,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Step 2: Generate Snake Animations
+      # Step 2: Create dist directory with proper permissions
+      - name: Create dist directory
+        run: |
+          mkdir -p dist
+          chmod 777 dist
+          echo "✅ Created dist directory with write permissions"
+
+      # Step 3: Generate Snake Animations
       - name: Generate GitHub Contributions Snake Animations
         uses: Platane/snk@v3
         with:
@@ -30,131 +37,99 @@ jobs:
             dist/snake/github-snake-dark.svg?palette=github-dark
             dist/snake/github-snake.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
       
-      # Step 3: List files after snake generation
-      - name: List files after snake generation
-        run: |
-          echo "📁 After Snake generation:"
-          find dist -type f | sort || echo "No files found"
-
-      # Step 4: Generate Pacman Animation
+      # Step 4: Generate Pacman Animation (fixed - removed dark_mode)
       - name: Generate Pacman Contribution Animation
         uses: abozanona/pacman-contribution-graph@main
         with:
           github_user_name: ${{ github.repository_owner }}
-          dark_mode: true
+          # github_token: ${{ secrets.GITHUB_TOKEN }} # Uncomment if needed
       
-      # Step 5: List files after pacman generation
-      - name: List files after pacman generation
+      # Step 5: Check what files were generated
+      - name: Check generated files
         run: |
-          echo "📁 After Pacman generation:"
-          find dist -type f | sort || echo "No files found"
+          echo "📁 Files in current directory:"
+          ls -la
+          echo ""
+          echo "📁 Files in dist directory:"
+          ls -la dist/ || echo "dist directory empty"
           
-      # Step 6: Install ImageMagick and create Pacman GIF
+      # Step 6: Fix permissions and organize Pacman files
+      - name: Organize Pacman files
+        run: |
+          # Create pacman directory
+          mkdir -p dist/pacman
+          chmod 777 dist/pacman
+          
+          # Check multiple possible locations for pacman files
+          echo "🔍 Searching for Pacman SVG files..."
+          
+          # Location 1: Current directory (sometimes the action puts files in root)
+          if [ -f "pacman-contribution-graph.svg" ]; then
+            echo "✅ Found Pacman light SVG in root"
+            cp pacman-contribution-graph.svg dist/pacman/pacman.svg
+            cp pacman-contribution-graph.svg dist/pacman-contribution-graph.svg 2>/dev/null || true
+          fi
+          
+          if [ -f "pacman-contribution-graph-dark.svg" ]; then
+            echo "✅ Found Pacman dark SVG in root"
+            cp pacman-contribution-graph-dark.svg dist/pacman/pacman-dark.svg
+          fi
+          
+          # Location 2: dist directory
+          if [ -f "dist/pacman-contribution-graph.svg" ]; then
+            echo "✅ Found Pacman light SVG in dist"
+            cp dist/pacman-contribution-graph.svg dist/pacman/pacman.svg
+          fi
+          
+          if [ -f "dist/pacman-contribution-graph-dark.svg" ]; then
+            echo "✅ Found Pacman dark SVG in dist"
+            cp dist/pacman-contribution-graph-dark.svg dist/pacman/pacman-dark.svg
+          fi
+          
+          # Show what we found
+          echo "📁 Pacman files after organization:"
+          ls -la dist/pacman/ || echo "No pacman files found"
+
+      # Step 7: Install ImageMagick and create Pacman GIF
       - name: Install ImageMagick and Create Pacman GIF
         run: |
           # Install ImageMagick
           sudo apt-get update
           sudo apt-get install -y imagemagick
           
-          echo "🔍 Looking for Pacman SVG files..."
-          
-          # Create pacman directory
-          mkdir -p dist/pacman
-          
-          # Check current directory
-          echo "Current directory: $(pwd)"
-          echo "Files in current directory:"
-          ls -la
-          
-          # Check for pacman files in various locations
-          PACMAN_FILES_FOUND=false
-          
-          # Check in dist/
-          if [ -f "dist/pacman-contribution-graph.svg" ]; then
-            echo "✅ Found Pacman light SVG in dist/"
-            cp dist/pacman-contribution-graph.svg dist/pacman/pacman.svg
-            PACMAN_FILES_FOUND=true
+          # Check if we have pacman SVGs to convert
+          if [ -f "dist/pacman/pacman.svg" ]; then
+            echo "✅ Found Pacman SVG, converting to GIF..."
             
-            # Convert SVG to GIF
-            echo "🔄 Converting light SVG to GIF..."
-            convert -background none -delay 20 -loop 0 -resize 800x dist/pacman-contribution-graph.svg dist/pacman/pacman.gif
-            echo "✅ Created Pacman light GIF"
+            # Convert SVG to GIF using ImageMagick
+            convert -background none -delay 20 -loop 0 -resize 800x dist/pacman/pacman.svg dist/pacman/pacman.gif
+            echo "✅ Created Pacman GIF"
+          else
+            echo "⚠️ No Pacman SVG found for GIF conversion"
           fi
           
-          if [ -f "dist/pacman-contribution-graph-dark.svg" ]; then
-            echo "✅ Found Pacman dark SVG in dist/"
-            cp dist/pacman-contribution-graph-dark.svg dist/pacman/pacman-dark.svg
-            PACMAN_FILES_FOUND=true
+          if [ -f "dist/pacman/pacman-dark.svg" ]; then
+            echo "✅ Found Pacman dark SVG, converting to GIF..."
             
             # Convert dark SVG to GIF
-            echo "🔄 Converting dark SVG to GIF..."
-            convert -background none -delay 20 -loop 0 -resize 800x dist/pacman-contribution-graph-dark.svg dist/pacman/pacman-dark.gif
+            convert -background none -delay 20 -loop 0 -resize 800x dist/pacman/pacman-dark.svg dist/pacman/pacman-dark.gif
             echo "✅ Created Pacman dark GIF"
           fi
           
-          # Also check in root directory
-          if [ -f "pacman-contribution-graph.svg" ]; then
-            echo "✅ Found Pacman light SVG in root"
-            cp pacman-contribution-graph.svg dist/pacman/pacman.svg
-            PACMAN_FILES_FOUND=true
-            
-            # Convert SVG to GIF
-            echo "🔄 Converting root light SVG to GIF..."
-            convert -background none -delay 20 -loop 0 -resize 800x pacman-contribution-graph.svg dist/pacman/pacman.gif
-            echo "✅ Created Pacman light GIF from root"
-          fi
-          
-          if [ -f "pacman-contribution-graph-dark.svg" ]; then
-            echo "✅ Found Pacman dark SVG in root"
-            cp pacman-contribution-graph-dark.svg dist/pacman/pacman-dark.svg
-            PACMAN_FILES_FOUND=true
-            
-            # Convert dark SVG to GIF
-            echo "🔄 Converting root dark SVG to GIF..."
-            convert -background none -delay 20 -loop 0 -resize 800x pacman-contribution-graph-dark.svg dist/pacman/pacman-dark.gif
-            echo "✅ Created Pacman dark GIF from root"
-          fi
-          
-          if [ "$PACMAN_FILES_FOUND" = false ]; then
-            echo "❌ No Pacman SVG files found anywhere!"
-            echo "Searching entire workspace for pacman files:"
-            find ${{ github.workspace }} -name "*pacman*.svg" 2>/dev/null || echo "No pacman files found"
-          fi
-          
+          # Final check
           echo "📁 Final files in dist/pacman:"
           ls -la dist/pacman/ || echo "pacman directory empty"
 
-      # Step 7: List all files before deployment
-      - name: Final file listing before deployment
+      # Step 8: List all files before deployment
+      - name: Final file listing
         run: |
-          echo "📁 COMPLETE FILE STRUCTURE BEFORE DEPLOYMENT:"
-          echo "=========================================="
-          find dist -type f -exec ls -la {} \; | sort
-          echo "=========================================="
-          echo "Total files: $(find dist -type f | wc -l)"
+          echo "📁 COMPLETE FILE STRUCTURE:"
+          echo "=========================="
+          find dist -type f -exec ls -la {} \; 2>/dev/null || echo "No files found"
+          echo "=========================="
 
-      # Step 8: Check for generated files
-      - name: Check for generated files
-        id: check_files
-        run: |
-          if [ -d "dist" ] && [ "$(ls -A dist)" ]; then
-            echo "✅ Files generated successfully"
-            echo "files_exist=true" >> $GITHUB_OUTPUT
-            
-            # Specifically check for pacman files
-            if [ -f "dist/pacman/pacman.gif" ]; then
-              echo "✅ Pacman GIF found and ready!"
-            else
-              echo "⚠️ Pacman GIF not found!"
-            fi
-          else
-            echo "⚠️ Warning: No animation files were generated."
-            echo "files_exist=false" >> $GITHUB_OUTPUT
-          fi
-
-      # Step 9: Deploy all generated files
+      # Step 9: Deploy to Output Branch
       - name: Deploy to Output Branch
-        if: steps.check_files.outputs.files_exist == 'true'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.SNAKE_ACCESS_TOKEN }}
@@ -165,15 +140,11 @@ jobs:
           user_email: 'github-actions[bot]@users.noreply.github.com'
           keep_files: true
           
-      # Step 10: Provide deployment URLs
-      - name: Output file URLs
-        if: steps.check_files.outputs.files_exist == 'true'
+      # Step 10: Output URLs
+      - name: Output animation URLs
         run: |
           echo "🎯 Your animation URLs:"
           echo "========================"
-          echo "🐍 Snake SVG: https://raw.githubusercontent.com/${{ github.repository_owner }}/${{ github.event.repository.name }}/output/snake/github-snake.svg"
-          echo "🐍 Snake GIF: https://raw.githubusercontent.com/${{ github.repository_owner }}/${{ github.event.repository.name }}/output/snake/github-snake.gif"
+          echo "🐍 Snake: https://raw.githubusercontent.com/${{ github.repository_owner }}/${{ github.event.repository.name }}/output/snake/github-snake.svg"
           echo "👻 Pacman SVG: https://raw.githubusercontent.com/${{ github.repository_owner }}/${{ github.event.repository.name }}/output/pacman/pacman.svg"
           echo "👻 Pacman GIF: https://raw.githubusercontent.com/${{ github.repository_owner }}/${{ github.event.repository.name }}/output/pacman/pacman.gif"
-          echo "========================"
-          echo "If Pacman GIF doesn't work, check the action logs above for errors"
