@@ -1,17 +1,23 @@
-<!-- Intro with animated typing - now placed INSIDE the capsule header as requested -->
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,50:EC4899,100:EF4444&height=280&section=header&text=Bojana%20Vasilevska&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Full%20Stack%20Developer%20%7C%20Tech%20Enthusiast%20%7C%20Problem%20Solver&descSize=20&descAlignY=55" width="100%" />
-</div>
 
 <!-- Animated Gradient Banner -->
 <div align="center">
   <img src="https://user-images.githubusercontent.com/74038190/212750155-3ceddfbd-19d3-40a3-87af-8d329c8323c4.gif" width="100%" alt="Animated Banner">
 </div>
 
+<!-- Intro with animated typing - now placed INSIDE the capsule header as requested -->
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,50:EC4899,100:EF4444&height=280&section=header&text=Bojana%20Vasilevska&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Full%20Stack%20Developer%20%7C%20Tech%20Enthusiast%20%7C%20Problem%20Solver&descSize=20&descAlignY=55" width="100%" />
+</div>
+
 <!-- Intro with animated typing effect -->
-<h1 align="center">
+<!-- <div align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=30&duration=2000&pause=500&color=9B59B6&center=true&vCenter=true&width=500&lines=Hey+there%2C+I'm+Bojana!;Full+Stack+Developer;Tech+Enthusiast;Problem+Solver" alt="Typing SVG" />
-</h1>
+</div> -->
+
+<!-- All grey underlines replaced with this specific GIF -->
+<!-- <div align="center">
+  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+</div> -->
 
 <!-- Social Badges with hover effects -->
 <div align="center" style="margin: 20px 0;">
@@ -25,6 +31,10 @@
 
 <!-- About Me Section -->
 ## 🚀 About Me
+<!-- All grey underlines replaced with this specific GIF -->
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,50:EC4899,100:EF4444&height=60&section=header&text=&animation=fadeIn" width="100%"/>
+</div>
 
 <div style="background: rgba(155, 89, 182, 0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
   <p align="center">
@@ -41,6 +51,9 @@
 </div>
 
 ## 🛠️ Tech Stack
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,50:EC4899,100:EF4444&height=60&section=header&text=&animation=fadeIn" width="100%"/>
+</div>
 
 <div style="background: rgba(155, 89, 182, 0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
   <div align="center" style="margin: 30px 0;">
@@ -49,6 +62,9 @@
 </div>
 
 ## 📈 GitHub Stats
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,50:EC4899,100:EF4444&height=60&section=header&text=&animation=fadeIn" width="100%"/>
+</div>
 
 <div style="background: rgba(155, 89, 182, 0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
   
@@ -69,6 +85,9 @@
   </p>
 
 ## ✨ Fun Facts
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,50:EC4899,100:EF4444&height=60&section=header&text=&animation=fadeIn" width="100%"/>
+</div>
 
 <div style="background: rgba(155, 89, 182, 0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
   <ul>
@@ -79,6 +98,9 @@
 </div>
 
 ## 📫 Let's Connect!
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,50:EC4899,100:EF4444&height=60&section=header&text=&animation=fadeIn" width="100%"/>
+</div>
 
 <div style="background: rgba(155, 89, 182, 0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
   <div align="center" style="margin: 20px 0;">
