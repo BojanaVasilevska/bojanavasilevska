@@ -1,3 +1,8 @@
+<!-- Intro with animated typing - now placed INSIDE the capsule header as requested -->
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,50:EC4899,100:EF4444&height=280&section=header&text=Bojana%20Vasilevska&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Full%20Stack%20Developer%20%7C%20Tech%20Enthusiast%20%7C%20Problem%20Solver&descSize=20&descAlignY=55" width="100%" />
+</div>
+
 <!-- Animated Gradient Banner -->
 <div align="center">
   <img src="https://user-images.githubusercontent.com/74038190/212750155-3ceddfbd-19d3-40a3-87af-8d329c8323c4.gif" width="100%" alt="Animated Banner">
@@ -89,4 +94,9 @@
 <div align="center" style="margin-top: 50px;">
   <img src="https://komarev.com/ghpvc/?username=bojanavasilevska&label=Profile+Views&color=9B59B6&style=flat-square" alt="profile views" />
   <p>Made with ❤️ and ☕</p>
+</div>
+
+<!-- Footer with updated colors to match the new header gradient -->
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,50:EC4899,100:EF4444&height=120&section=footer&animation=fadeIn" width="100%"/>
 </div>
