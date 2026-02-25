@@ -9,15 +9,10 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,50:EC4899,100:EF4444&height=280&section=header&text=Bojana%20Vasilevska&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Full%20Stack%20Developer%20%7C%20Tech%20Enthusiast%20%7C%20Problem%20Solver&descSize=20&descAlignY=55" width="100%" />
 </div>
 
-<!-- Intro with animated typing effect -->
-<!-- <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=30&duration=2000&pause=500&color=9B59B6&center=true&vCenter=true&width=500&lines=Hey+there%2C+I'm+Bojana!;Full+Stack+Developer;Tech+Enthusiast;Problem+Solver" alt="Typing SVG" />
-</div> -->
-
 <!-- All grey underlines replaced with this specific GIF -->
 <!-- <div align="center">
   <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-</div> -->
+</div>
 
 <!-- Social Badges with hover effects -->
 <div align="center" style="margin: 20px 0;">
@@ -27,6 +22,15 @@
   <a href="https://linkedin.com/in/bojana-vasilevska-8a100b86" target="_blank">
     <img src="https://img.shields.io/badge/LINKEDIN-%231DA1F2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=1DA1F2&color=white" alt="LinkedIn" style="margin: 0 5px;">
   </a>
+</div>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/locfaker/locfaker/main/assets/music-wave.svg" width="400" alt="Music Visualizer" />
+</div>
+
+<!-- Intro with animated typing effect -->
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=800&color=9B59B6&center=true&vCenter=true&width=600&lines=My+happy+place+has+a+playlist;Life+is+better+with+headphones+on;Escaping+reality+one+song+at+a+time" alt="Typing SVG" />
 </div>
 
 <!-- About Me Section -->
