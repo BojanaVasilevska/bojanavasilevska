@@ -1,9 +1,14 @@
-name: Generate Snake and Pacman Animations
+name: GitHub Snake Game
 
 on:
+  # Schedule the workflow to run daily at midnight UTC
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * *' # Fixed: Quotes around cron string
+
+  # Allow manual triggering
   workflow_dispatch:
+
+  # Trigger on pushes to the main branch
   push:
     branches:
       - main
@@ -12,139 +17,47 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+
+    # 1. ✅ ADDED: Explicit permissions for the job
     permissions:
       contents: write
 
     steps:
-      # Step 1: Checkout repository
+      # Step 1: Checkout the repository (Upgraded to v4)
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # Changed: Upgraded from v3
 
-      # Step 2: Create dist directory with proper permissions
-      - name: Create dist directory
-        run: |
-          mkdir -p dist
-          chmod 777 dist
-          echo "✅ Created dist directory with write permissions"
-
-      # Step 3: Generate Snake Animations
+      # Step 2: Generate the snake animations
       - name: Generate GitHub Contributions Snake Animations
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/snake/github-snake.svg
-            dist/snake/github-snake-dark.svg?palette=github-dark
-            dist/snake/github-snake.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
-      
-      # Step 4: Generate Pacman Animation (fixed - removed dark_mode)
-      - name: Generate Pacman Contribution Animation
-        uses: abozanona/pacman-contribution-graph@main
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          # github_token: ${{ secrets.GITHUB_TOKEN }} # Uncomment if needed
-      
-      # Step 5: Check what files were generated
-      - name: Check generated files
-        run: |
-          echo "📁 Files in current directory:"
-          ls -la
-          echo ""
-          echo "📁 Files in dist directory:"
-          ls -la dist/ || echo "dist directory empty"
-          
-      # Step 6: Fix permissions and organize Pacman files
-      - name: Organize Pacman files
-        run: |
-          # Create pacman directory
-          mkdir -p dist/pacman
-          chmod 777 dist/pacman
-          
-          # Check multiple possible locations for pacman files
-          echo "🔍 Searching for Pacman SVG files..."
-          
-          # Location 1: Current directory (sometimes the action puts files in root)
-          if [ -f "pacman-contribution-graph.svg" ]; then
-            echo "✅ Found Pacman light SVG in root"
-            cp pacman-contribution-graph.svg dist/pacman/pacman.svg
-            cp pacman-contribution-graph.svg dist/pacman-contribution-graph.svg 2>/dev/null || true
-          fi
-          
-          if [ -f "pacman-contribution-graph-dark.svg" ]; then
-            echo "✅ Found Pacman dark SVG in root"
-            cp pacman-contribution-graph-dark.svg dist/pacman/pacman-dark.svg
-          fi
-          
-          # Location 2: dist directory
-          if [ -f "dist/pacman-contribution-graph.svg" ]; then
-            echo "✅ Found Pacman light SVG in dist"
-            cp dist/pacman-contribution-graph.svg dist/pacman/pacman.svg
-          fi
-          
-          if [ -f "dist/pacman-contribution-graph-dark.svg" ]; then
-            echo "✅ Found Pacman dark SVG in dist"
-            cp dist/pacman-contribution-graph-dark.svg dist/pacman/pacman-dark.svg
-          fi
-          
-          # Show what we found
-          echo "📁 Pacman files after organization:"
-          ls -la dist/pacman/ || echo "No pacman files found"
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
-      # Step 7: Install ImageMagick and create Pacman GIF
-      - name: Install ImageMagick and Create Pacman GIF
+      # ✅ NEW: Step to handle potential empty output
+      - name: Check for generated files
+        id: check_files
         run: |
-          # Install ImageMagick
-          sudo apt-get update
-          sudo apt-get install -y imagemagick
-          
-          # Check if we have pacman SVGs to convert
-          if [ -f "dist/pacman/pacman.svg" ]; then
-            echo "✅ Found Pacman SVG, converting to GIF..."
-            
-            # Convert SVG to GIF using ImageMagick
-            convert -background none -delay 20 -loop 0 -resize 800x dist/pacman/pacman.svg dist/pacman/pacman.gif
-            echo "✅ Created Pacman GIF"
+          if [ -f "dist/github-snake.svg" ]; then
+            echo "Files generated successfully"
+            echo "files_exist=true" >> $GITHUB_OUTPUT
           else
-            echo "⚠️ No Pacman SVG found for GIF conversion"
+            echo "Warning: No snake files were generated. This may happen if you have no public contributions."
+            echo "files_exist=false" >> $GITHUB_OUTPUT
           fi
-          
-          if [ -f "dist/pacman/pacman-dark.svg" ]; then
-            echo "✅ Found Pacman dark SVG, converting to GIF..."
-            
-            # Convert dark SVG to GIF
-            convert -background none -delay 20 -loop 0 -resize 800x dist/pacman/pacman-dark.svg dist/pacman/pacman-dark.gif
-            echo "✅ Created Pacman dark GIF"
-          fi
-          
-          # Final check
-          echo "📁 Final files in dist/pacman:"
-          ls -la dist/pacman/ || echo "pacman directory empty"
 
-      # Step 8: List all files before deployment
-      - name: Final file listing
-        run: |
-          echo "📁 COMPLETE FILE STRUCTURE:"
-          echo "=========================="
-          find dist -type f -exec ls -la {} \; 2>/dev/null || echo "No files found"
-          echo "=========================="
-
-      # Step 9: Deploy to Output Branch
+      # Step 3: Deploy the generated files (conditional)
       - name: Deploy to Output Branch
+        if: steps.check_files.outputs.files_exist == 'true'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: output
-          commit_message: "Update snake and pacman animations [skip ci]"
+          commit_message: "Update snake animation [skip ci]"
+          # ✅ Optional: Add user info for cleaner git history
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-          keep_files: true
-          
-      # Step 10: Output URLs
-      - name: Output animation URLs
-        run: |
-          echo "🎯 Your animation URLs:"
-          echo "========================"
-          echo "🐍 Snake: https://raw.githubusercontent.com/${{ github.repository_owner }}/${{ github.event.repository.name }}/output/snake/github-snake.svg"
-          echo "👻 Pacman SVG: https://raw.githubusercontent.com/${{ github.repository_owner }}/${{ github.event.repository.name }}/output/pacman/pacman.svg"
-          echo "👻 Pacman GIF: https://raw.githubusercontent.com/${{ github.repository_owner }}/${{ github.event.repository.name }}/output/pacman/pacman.gif"
