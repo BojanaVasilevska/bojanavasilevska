@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Areas of expertise">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1080" viewBox="0 0 1600 1080" role="img" aria-label="Areas of expertise">
   <title>Areas of Expertise</title>
   <defs>
     <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
@@ -20,10 +20,10 @@
       <circle cx="2" cy="2" r="1.2" fill="#ffffff" fill-opacity="0.06"/>
     </pattern>
     <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
-    <clipPath id="clipR"><rect width="1600" height="1000" rx="36"/></clipPath></defs>
+    <clipPath id="clipR"><rect width="1600" height="1080" rx="36"/></clipPath></defs>
   <g clip-path="url(#clipR)">
-    <rect width="1600" height="1000" fill="url(#bg)"/>
-    <rect width="1600" height="1000" fill="url(#dots)"/>
+    <rect width="1600" height="1080" fill="url(#bg)"/>
+    <rect width="1600" height="1080" fill="url(#dots)"/>
     <circle cx="800" cy="420" r="560" fill="url(#glowP)"/>
     
       <g transform="translate(70,120)"><g>
@@ -51,13 +51,13 @@
         <path d="M-15.0 -7.5 L0 0 L0 16.5 L-15.0 9.0 Z" fill="#8B5CF6"/>
         <path d="M15.0 -7.5 L0 0 L0 16.5 L15.0 9.0 Z" fill="#EC4899"/>
         <animateTransform attributeName="transform" type="translate" values="0 0;0 -14;0 0" dur="8s" repeatCount="indefinite"/></g></g>
-    <path d="M0 935 Q 400 870 800 920 T 1600 900 V 1000 H 0 Z" fill="url(#brand)" opacity="0.45"><animate attributeName="d" values="M0 935 Q 400 870 800 920 T 1600 900 V 1000 H 0 Z;M0 915 Q 400 960 800 905 T 1600 930 V 1000 H 0 Z;M0 935 Q 400 870 800 920 T 1600 900 V 1000 H 0 Z" dur="7s" repeatCount="indefinite"/></path>
-    <path d="M0 960 Q 450 910 820 950 T 1600 935 V 1000 H 0 Z" fill="url(#brand)"/>
+    <path d="M0 1015 Q 400 950 800 1000 T 1600 980 V 1080 H 0 Z" fill="url(#brand)" opacity="0.45"><animate attributeName="d" values="M0 1015 Q 400 950 800 1000 T 1600 980 V 1080 H 0 Z;M0 995 Q 400 1040 800 985 T 1600 1010 V 1080 H 0 Z;M0 1015 Q 400 950 800 1000 T 1600 980 V 1080 H 0 Z" dur="7s" repeatCount="indefinite"/></path>
+    <path d="M0 1040 Q 450 990 820 1030 T 1600 1015 V 1080 H 0 Z" fill="url(#brand)"/>
   </g>
-  <rect x="1" y="1" width="1598" height="998" rx="35" fill="none" stroke="url(#brand)" stroke-opacity="0.55" stroke-width="2"/>
+  <rect x="1" y="1" width="1598" height="1078" rx="35" fill="none" stroke="url(#brand)" stroke-opacity="0.55" stroke-width="2"/>
   <text x="800" y="110" text-anchor="middle" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="64" font-weight="800" fill="url(#brand)">Areas of Expertise</text>
   <rect x="720" y="132" width="160" height="5" rx="2.5" fill="url(#brand)"/>
-  <text x="800" y="190" text-anchor="middle" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="24" fill="#DDD6FE">Full Stack Developer crafting <tspan font-weight="800" fill="#F5F3FF">global solutions</tspan> — from pixel-perfect UIs to scalable backends.</text>
+  <text x="800" y="190" text-anchor="middle" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="24" fill="#DDD6FE">Full Stack Developer building <tspan font-weight="800" fill="#F5F3FF">fast, modern products</tspan> — from pixel-perfect UIs to scalable backends.</text>
   
       <g transform="translate(80,260)">
         <rect width="460" height="180" rx="20" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.13"/>
@@ -83,7 +83,7 @@
         </g>
         <text x="160" y="76" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="26" font-weight="800" fill="#F5F3FF">Backend Development</text>
         <text x="160" y="110" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="20" fill="#A5A1C9">Clean REST APIs with</text>
-        <text x="160" y="136" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="20" fill="#A5A1C9">Flask, Python &amp; Go</text>
+        <text x="160" y="136" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="20" fill="#A5A1C9">FastAPI, Python &amp; Go</text>
       </g>
       <g transform="translate(1060,260)">
         <rect width="460" height="180" rx="20" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.13"/>
@@ -141,12 +141,12 @@
       <g transform="translate(80,700)">
         <rect width="460" height="64" rx="32" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/>
         <circle cx="40" cy="32" r="9" fill="#22D3EE"/>
-        <text x="240" y="41" text-anchor="middle" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="23" font-weight="700" fill="#F5F3FF">5+ Projects on GitHub</text>
+        <text x="240" y="41" text-anchor="middle" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="23" font-weight="700" fill="#F5F3FF">Python · Go · TypeScript</text>
       </g>
       <g transform="translate(570,700)">
         <rect width="460" height="64" rx="32" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/>
         <circle cx="40" cy="32" r="9" fill="#8B5CF6"/>
-        <text x="240" y="41" text-anchor="middle" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="23" font-weight="700" fill="#F5F3FF">Python · Go · TypeScript</text>
+        <text x="240" y="41" text-anchor="middle" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="23" font-weight="700" fill="#F5F3FF">FastAPI + Next.js builder</text>
       </g>
       <g transform="translate(1060,700)">
         <rect width="460" height="64" rx="32" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/>
@@ -158,4 +158,6 @@
     <circle cx="40" cy="32" r="9" fill="#EC4899"><animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
     <text x="560" y="41" text-anchor="middle" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="23" font-weight="700" fill="#F5F3FF">Open to side projects, collaborations &amp; freelance work. Let's build something together!</text>
   </g>
+  <text x="800" y="920" text-anchor="middle" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="40" font-weight="800" fill="url(#brand)">Thanks for visiting my profile!</text>
+  <text x="800" y="960" text-anchor="middle" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#DDD6FE">If you like my work, consider giving a <tspan fill="#FBBF24">★</tspan> to the repositories you find useful.</text>
 </svg>
