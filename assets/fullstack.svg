@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Full stack development: frontend, backend, data">
+  <title>Full Stack Development</title>
+  <defs>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8B5CF6"/><stop offset="0.5" stop-color="#EC4899"/><stop offset="1" stop-color="#EF4444"/>
+    </linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#140B2E"/><stop offset="0.55" stop-color="#0D0A1F"/><stop offset="1" stop-color="#1F0A22"/>
+    </linearGradient>
+    <radialGradient id="glowP" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#8B5CF6" stop-opacity="0.35"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowK" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#EC4899" stop-opacity="0.28"/><stop offset="1" stop-color="#EC4899" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.07"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.025"/>
+    </linearGradient>
+    <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#ffffff" fill-opacity="0.06"/>
+    </pattern>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+    
+    <linearGradient id="vbrand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EC4899"/><stop offset="0.5" stop-color="#8B5CF6"/><stop offset="1" stop-color="#EF4444"/></linearGradient>
+    <clipPath id="clipR"><rect width="1600" height="900" rx="36"/></clipPath>
+  </defs>
+  <g clip-path="url(#clipR)">
+    <rect width="1600" height="900" fill="url(#bg)"/>
+    <rect width="1600" height="900" fill="url(#dots)"/>
+    <circle cx="800" cy="520" r="420" fill="url(#glowP)"/>
+  </g>
+  <rect x="1" y="1" width="1598" height="898" rx="35" fill="none" stroke="url(#brand)" stroke-opacity="0.55" stroke-width="2"/>
+
+  <text x="800" y="92" text-anchor="middle" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="66" font-weight="900" letter-spacing="10" fill="url(#brand)">FULL STACK DEVELOPMENT</text>
+  <text x="800" y="134" text-anchor="middle" font-family="'Fira Code', 'Consolas', 'Menlo', monospace" font-size="19" letter-spacing="5" fill="#A5A1C9">FRONTEND  /  BACKEND  /  APIs  /  DATABASES  /  UI-UX</text>
+  <rect x="600" y="150" width="400" height="2" fill="url(#brand)" opacity="0.7"/>
+
+  <text x="800" y="236" text-anchor="middle" font-family="'Fira Code', 'Consolas', 'Menlo', monospace" font-size="16" letter-spacing="4" fill="#A5A1C9">HOW A REQUEST FLOWS</text>
+  <path d="M440 277 C 560 277, 600 510, 675 510" fill="none" stroke="#EC4899" stroke-opacity="0.55" stroke-width="2" stroke-dasharray="6 8"><animate attributeName="stroke-dashoffset" from="28" to="0" dur="1.2s" repeatCount="indefinite"/></path><circle cx="440" cy="277" r="6" fill="#EC4899"/><path d="M1160 277 C 1040 277, 1000 510, 925 510" fill="none" stroke="#8B5CF6" stroke-opacity="0.55" stroke-width="2" stroke-dasharray="6 8"><animate attributeName="stroke-dashoffset" from="0" to="28" dur="1.2s" repeatCount="indefinite"/></path><circle cx="1160" cy="277" r="6" fill="#8B5CF6"/><path d="M440 511 C 560 511, 600 510, 675 510" fill="none" stroke="#EC4899" stroke-opacity="0.55" stroke-width="2" stroke-dasharray="6 8"><animate attributeName="stroke-dashoffset" from="28" to="0" dur="1.2s" repeatCount="indefinite"/></path><circle cx="440" cy="511" r="6" fill="#EC4899"/><path d="M1160 511 C 1040 511, 1000 510, 925 510" fill="none" stroke="#8B5CF6" stroke-opacity="0.55" stroke-width="2" stroke-dasharray="6 8"><animate attributeName="stroke-dashoffset" from="0" to="28" dur="1.2s" repeatCount="indefinite"/></path><circle cx="1160" cy="511" r="6" fill="#8B5CF6"/><path d="M440 745 C 560 745, 600 510, 675 510" fill="none" stroke="#EC4899" stroke-opacity="0.55" stroke-width="2" stroke-dasharray="6 8"><animate attributeName="stroke-dashoffset" from="28" to="0" dur="1.2s" repeatCount="indefinite"/></path><circle cx="440" cy="745" r="6" fill="#EC4899"/><path d="M1160 745 C 1040 745, 1000 510, 925 510" fill="none" stroke="#8B5CF6" stroke-opacity="0.55" stroke-width="2" stroke-dasharray="6 8"><animate attributeName="stroke-dashoffset" from="0" to="28" dur="1.2s" repeatCount="indefinite"/></path><circle cx="1160" cy="745" r="6" fill="#8B5CF6"/>
+  <line x1="800" y1="290" x2="800" y2="730" stroke="url(#vbrand)" stroke-width="4" stroke-dasharray="10 10"><animate attributeName="stroke-dashoffset" from="40" to="0" dur="1s" repeatCount="indefinite"/></line><circle cx="800" cy="290" r="9" fill="#fff"><animate attributeName="cy" values="262;758;262" dur="4s" repeatCount="indefinite"/><animate attributeName="fill" values="#EC4899;#8B5CF6;#EF4444;#8B5CF6;#EC4899" dur="4s" repeatCount="indefinite"/></circle>
+      <g>
+        <rect x="680" y="262" width="240" height="56" rx="28" fill="#140C2B" stroke="#EC4899" stroke-width="2.5"/>
+        <text x="800" y="298" text-anchor="middle" font-family="'Fira Code', 'Consolas', 'Menlo', monospace" font-size="20" font-weight="700" letter-spacing="2" fill="#F5F3FF">BROWSER</text>
+      </g>
+      <g>
+        <rect x="680" y="372" width="240" height="56" rx="28" fill="#140C2B" stroke="#22D3EE" stroke-width="2.5"/>
+        <text x="800" y="408" text-anchor="middle" font-family="'Fira Code', 'Consolas', 'Menlo', monospace" font-size="20" font-weight="700" letter-spacing="2" fill="#F5F3FF">NEXT.JS</text>
+      </g>
+      <g>
+        <rect x="680" y="482" width="240" height="56" rx="28" fill="#140C2B" stroke="#8B5CF6" stroke-width="2.5"/>
+        <text x="800" y="518" text-anchor="middle" font-family="'Fira Code', 'Consolas', 'Menlo', monospace" font-size="20" font-weight="700" letter-spacing="2" fill="#F5F3FF">API</text>
+      </g>
+      <g>
+        <rect x="680" y="592" width="240" height="56" rx="28" fill="#140C2B" stroke="#EC4899" stroke-width="2.5"/>
+        <text x="800" y="628" text-anchor="middle" font-family="'Fira Code', 'Consolas', 'Menlo', monospace" font-size="20" font-weight="700" letter-spacing="2" fill="#F5F3FF">FLASK / GO</text>
+      </g>
+      <g>
+        <rect x="680" y="702" width="240" height="56" rx="28" fill="#140C2B" stroke="#EF4444" stroke-width="2.5"/>
+        <text x="800" y="738" text-anchor="middle" font-family="'Fira Code', 'Consolas', 'Menlo', monospace" font-size="20" font-weight="700" letter-spacing="2" fill="#F5F3FF">POSTGRES</text>
+      </g>
+  
+      <g transform="translate(40,170)">
+        <rect width="400" height="214" rx="18" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.12"/>
+        <rect x="20" y="0" width="360" height="4" rx="2" fill="#22D3EE"/>
+        <text x="22" y="42" font-family="'Fira Code', 'Consolas', 'Menlo', monospace" font-size="14" letter-spacing="3" fill="#A5A1C9">FRONTEND LAYER</text>
+        <text x="22" y="78" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27" font-weight="800" fill="#F5F3FF">React &amp; Next.js</text>
+        <line x1="22" y1="94" x2="270" y2="94" stroke="#ffffff" stroke-opacity="0.12"/>
+        <circle cx="26" cy="122" r="4" fill="#22D3EE"/><text x="42" y="129" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#E4E0FF">Server-side rendering</text><circle cx="26" cy="156" r="4" fill="#22D3EE"/><text x="42" y="163" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#E4E0FF">Reusable components</text><circle cx="26" cy="190" r="4" fill="#22D3EE"/><text x="42" y="197" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#E4E0FF">TypeScript everywhere</text>
+        <g transform="translate(300,110)"><g transform="translate(40,10)"><g fill="none" stroke="#22D3EE" stroke-width="3"><ellipse rx="44" ry="17"/><ellipse rx="44" ry="17" transform="rotate(60)"/><ellipse rx="44" ry="17" transform="rotate(120)"/></g><circle r="7" fill="#22D3EE"/><g transform="translate(50,0)"/><animateTransform attributeName="transform" type="rotate" from="0 40 10" to="360 40 10" dur="12s" additive="sum" repeatCount="indefinite"/></g></g>
+      </g>
+      <g transform="translate(40,404)">
+        <rect width="400" height="214" rx="18" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.12"/>
+        <rect x="20" y="0" width="360" height="4" rx="2" fill="#EC4899"/>
+        <text x="22" y="42" font-family="'Fira Code', 'Consolas', 'Menlo', monospace" font-size="14" letter-spacing="3" fill="#A5A1C9">FRONTEND LAYER</text>
+        <text x="22" y="78" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27" font-weight="800" fill="#F5F3FF">UI / UX Design</text>
+        <line x1="22" y1="94" x2="270" y2="94" stroke="#ffffff" stroke-opacity="0.12"/>
+        <circle cx="26" cy="122" r="4" fill="#EC4899"/><text x="42" y="129" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#E4E0FF">Wireframes in Figma</text><circle cx="26" cy="156" r="4" fill="#EC4899"/><text x="42" y="163" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#E4E0FF">Responsive layouts</text><circle cx="26" cy="190" r="4" fill="#EC4899"/><text x="42" y="197" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#E4E0FF">Accessible interfaces</text>
+        <g transform="translate(300,110)"><g transform="translate(0,-30)"><rect width="80" height="62" rx="8" fill="none" stroke="#EC4899" stroke-width="3"/><rect x="8" y="10" width="28" height="42" rx="4" fill="#EC4899" fill-opacity="0.5"/><rect x="42" y="10" width="30" height="8" rx="4" fill="#EC4899"/><rect x="42" y="24" width="22" height="8" rx="4" fill="#EC4899" fill-opacity="0.6"/><rect x="42" y="38" width="30" height="14" rx="4" fill="#8B5CF6"/></g></g>
+      </g>
+      <g transform="translate(40,638)">
+        <rect width="400" height="214" rx="18" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.12"/>
+        <rect x="20" y="0" width="360" height="4" rx="2" fill="#8B5CF6"/>
+        <text x="22" y="42" font-family="'Fira Code', 'Consolas', 'Menlo', monospace" font-size="14" letter-spacing="3" fill="#A5A1C9">FRONTEND LAYER</text>
+        <text x="22" y="78" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27" font-weight="800" fill="#F5F3FF">Styling</text>
+        <line x1="22" y1="94" x2="270" y2="94" stroke="#ffffff" stroke-opacity="0.12"/>
+        <circle cx="26" cy="122" r="4" fill="#8B5CF6"/><text x="42" y="129" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#E4E0FF">Tailwind CSS</text><circle cx="26" cy="156" r="4" fill="#8B5CF6"/><text x="42" y="163" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#E4E0FF">HTML5 &amp; CSS3</text><circle cx="26" cy="190" r="4" fill="#8B5CF6"/><text x="42" y="197" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#E4E0FF">Animations &amp; motion</text>
+        <g transform="translate(300,110)"><g transform="translate(0,-20)" fill="none" stroke="#22D3EE" stroke-width="4" stroke-linecap="round"><path d="M0 20 Q 20 0 40 20 T 80 20"/><path d="M0 44 Q 20 24 40 44 T 80 44"/></g></g>
+      </g>
+  
+      <g transform="translate(1160,170)">
+        <rect width="400" height="214" rx="18" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.12"/>
+        <rect x="20" y="0" width="360" height="4" rx="2" fill="#8B5CF6"/>
+        <text x="22" y="42" font-family="'Fira Code', 'Consolas', 'Menlo', monospace" font-size="14" letter-spacing="3" fill="#A5A1C9">BACKEND LAYER</text>
+        <text x="22" y="78" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27" font-weight="800" fill="#F5F3FF">Flask &amp; Python</text>
+        <line x1="22" y1="94" x2="270" y2="94" stroke="#ffffff" stroke-opacity="0.12"/>
+        <circle cx="26" cy="122" r="4" fill="#8B5CF6"/><text x="42" y="129" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#E4E0FF">REST APIs</text><circle cx="26" cy="156" r="4" fill="#8B5CF6"/><text x="42" y="163" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#E4E0FF">Data analytics</text><circle cx="26" cy="190" r="4" fill="#8B5CF6"/><text x="42" y="197" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#E4E0FF">Auth &amp; sessions</text>
+        <g transform="translate(300,110)"><g transform="translate(0,-24)" font-family="'Fira Code', 'Consolas', 'Menlo', monospace" font-weight="700"><text x="0" y="22" font-size="26" fill="#8B5CF6">GET</text><text x="0" y="54" font-size="26" fill="#EC4899">POST</text></g></g>
+      </g>
+      <g transform="translate(1160,404)">
+        <rect width="400" height="214" rx="18" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.12"/>
+        <rect x="20" y="0" width="360" height="4" rx="2" fill="#22D3EE"/>
+        <text x="22" y="42" font-family="'Fira Code', 'Consolas', 'Menlo', monospace" font-size="14" letter-spacing="3" fill="#A5A1C9">BACKEND LAYER</text>
+        <text x="22" y="78" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27" font-weight="800" fill="#F5F3FF">Go Services</text>
+        <line x1="22" y1="94" x2="270" y2="94" stroke="#ffffff" stroke-opacity="0.12"/>
+        <circle cx="26" cy="122" r="4" fill="#22D3EE"/><text x="42" y="129" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#E4E0FF">Fast, concurrent APIs</text><circle cx="26" cy="156" r="4" fill="#22D3EE"/><text x="42" y="163" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#E4E0FF">Goroutines &amp; channels</text><circle cx="26" cy="190" r="4" fill="#22D3EE"/><text x="42" y="197" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#E4E0FF">Backend scalability</text>
+        <g transform="translate(300,110)"><g transform="translate(0,-26)"><rect width="84" height="52" rx="12" fill="#00ADD8" fill-opacity="0.18" stroke="#00ADD8" stroke-width="3"/><text x="42" y="36" text-anchor="middle" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="28" font-weight="900" font-style="italic" fill="#00ADD8">GO</text></g></g>
+      </g>
+      <g transform="translate(1160,638)">
+        <rect width="400" height="214" rx="18" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.12"/>
+        <rect x="20" y="0" width="360" height="4" rx="2" fill="#EF4444"/>
+        <text x="22" y="42" font-family="'Fira Code', 'Consolas', 'Menlo', monospace" font-size="14" letter-spacing="3" fill="#A5A1C9">DATA LAYER</text>
+        <text x="22" y="78" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27" font-weight="800" fill="#F5F3FF">PostgreSQL</text>
+        <line x1="22" y1="94" x2="270" y2="94" stroke="#ffffff" stroke-opacity="0.12"/>
+        <circle cx="26" cy="122" r="4" fill="#EF4444"/><text x="42" y="129" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#E4E0FF">Schema design</text><circle cx="26" cy="156" r="4" fill="#EF4444"/><text x="42" y="163" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#E4E0FF">Queries &amp; indexing</text><circle cx="26" cy="190" r="4" fill="#EF4444"/><text x="42" y="197" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" fill="#E4E0FF">Analytics data</text>
+        <g transform="translate(300,110)"><g transform="translate(40,-30)" fill="none" stroke="#EF4444" stroke-width="3"><ellipse cx="0" cy="0" rx="34" ry="11"/><path d="M-34 0 V44 A34 11 0 0 0 34 44 V0"/><path d="M-34 22 A34 11 0 0 0 34 22"/></g></g>
+      </g>
+  <text x="800" y="830" text-anchor="middle" font-family="'Fira Code', 'Consolas', 'Menlo', monospace" font-size="16" letter-spacing="4" fill="#A5A1C9">● IDEA  →  DESIGN  →  BUILD  →  SHIP</text>
+</svg>
