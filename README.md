@@ -22,56 +22,9 @@
 
 ---
 
-## 🚀 About Me
-
-- 🎯 **Currently building:** a Flask + Next.js app
-- 🔎 **Exploring:** backend scalability with Go, and UI/UX magic
-- 🤝 **Open to:** side-projects, collabs and freelance missions
-- ☕ Coffee makes my code 10x better · 🧘‍♀️ I balance bugs with yoga poses · 🌍 Fluent in tech & travel
-
----
-
-## 🌟 Featured Projects
-
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>📊 Flask E-commerce Analytics</h3>
-      <p>A Flask app that analyzes e-commerce orders and payments and turns the raw data into useful insights.</p>
-      <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-      <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white" />
-      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
-      <br/><br/>
-      <a href="https://github.com/BojanaVasilevska/flask-ecommerce-analytics"><img src="https://img.shields.io/badge/VIEW-PROJECT-8B5CF6?style=for-the-badge&logo=github&logoColor=white" /></a>
-    </td>
-    <td width="50%" valign="top">
-      <h3>🥗 Calorie Tracker</h3>
-      <p>An app for tracking and managing daily calorie intake, with a simple and friendly interface.</p>
-      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
-      <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" />
-      <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" />
-      <br/><br/>
-      <a href="https://github.com/BojanaVasilevska/calorie-tracker"><img src="https://img.shields.io/badge/VIEW-PROJECT-EC4899?style=for-the-badge&logo=github&logoColor=white" /></a>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🎨 My Favorite Colors</h3>
-      <p>A small web app where users can save and browse their favorite colors.</p>
-      <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
-      <br/><br/>
-      <a href="https://github.com/BojanaVasilevska/my-favorite-colors"><img src="https://img.shields.io/badge/VIEW-PROJECT-8B5CF6?style=for-the-badge&logo=github&logoColor=white" /></a>
-    </td>
-    <td width="50%" valign="top">
-      <h3>🍕 Yammi Pizza App</h3>
-      <p>A mobile app for ordering pizzas from a wide selection.</p>
-      <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" />
-      <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" />
-      <br/><br/>
-      <a href="https://github.com/BojanaVasilevska/yammi-pizza-app"><img src="https://img.shields.io/badge/VIEW-PROJECT-EF4444?style=for-the-badge&logo=github&logoColor=white" /></a>
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <img src="assets/about.svg" width="100%" alt="About Me: building FastAPI + Next.js, exploring Go and UI/UX, open to side-projects, collabs and freelance"/>
+</div>
 
 ---
 
@@ -80,7 +33,7 @@
 <div align="center">
   <img src="assets/fullstack.svg" width="100%" alt="Full Stack Development"/>
   <br/><br/>
-  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,py,flask,go,postgres,git,linux,tailwind,figma&perline=14" alt="Tech Stack" />
+  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,py,fastapi,go,postgres,git,linux,tailwind,figma&perline=14" alt="Tech Stack" />
 </div>
 
 ---
